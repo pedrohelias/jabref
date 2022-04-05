@@ -63,7 +63,7 @@ public final class BibtexCaseChanger {
         }
     }
 
-    private BibtexCaseChanger() {
+    BibtexCaseChanger() {
     }
 
     /**

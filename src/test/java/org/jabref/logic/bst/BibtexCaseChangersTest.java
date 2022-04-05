@@ -1,18 +1,37 @@
 package org.jabref.logic.bst;
 
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.jabref.logic.bst.BibtexCaseChanger.FORMAT_MODE;
 
+import org.jabref.logic.pdf.AnnotationImporter;
+import org.jabref.logic.pdf.PdfAnnotationImporter;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BibtexCaseChangersTest {
+
+
+    @Test
+    public void testLetras(){
+        //teste proposto por Pedro Helias Carlos
+        char[] c = {'1', 's', 't', 'u', 'v'};
+        //char[] c = {'o', 'e'};
+        int pos = 60;
+
+        Optional<String> resultado = BibtexCaseChanger.findSpecialChar(c, pos);
+        assertEquals(Optional.empty(), resultado, String.valueOf(0));
+        //assertEquals(Optional.of(String.valueOf(c[pos])), resultado, String.valueOf(0));
+
+    }
+
 
     @ParameterizedTest
     @MethodSource("provideStringsForTitleLowers")

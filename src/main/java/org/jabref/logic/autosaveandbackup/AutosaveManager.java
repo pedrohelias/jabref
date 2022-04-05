@@ -20,9 +20,7 @@ import org.slf4j.LoggerFactory;
  * An intelligent {@link ScheduledThreadPoolExecutor} prevents a high load while saving and rejects all redundant save tasks.
  * The scheduled action is stored and canceled if a newer save action is proposed.
  */
-public class AutosaveManager {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(AutosaveManager.class);
+public class AutosaveManager {    private static final Logger LOGGER = LoggerFactory.getLogger(AutosaveManager.class);
 
     private static Set<AutosaveManager> runningInstances = new HashSet<>();
 
